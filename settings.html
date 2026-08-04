@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Student Productivity</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="css/sidebar.css">
+
+    <link rel="stylesheet"
+        href="css/settings.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div id="sidebar" class="sidebar">
+
+    <div class="sidebar-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h2>Student</h2>
+
+                <p>Productivity</p>
+
+            </div>
+
+        </div>
+
+        <button id="closeSidebar">
+            ✖
+        </button>
+
+    </div>
+
+    <ul class="sidebar-menu">
+
+        <li>
+            <a href="dashboard.html">
+                <span>🏠</span>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="calendar.html">
+                <span>📅</span>
+                Calendar
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span>🤖</span>
+                AI Assistant
+                <small>(Soon)</small>
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html">
+                <span>👤</span>
+                Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html"
+                class="active">
+
+                <span>⚙</span>
+
+                Settings
+
+            </a>
+        </li>
+
+        <li>
+    <a href="notifications.html">
+        <span>🔔</span>
+        Notifications
+    </a>
+</li>
+
+        <li>
+            <a href="about.html">
+                <span>ℹ</span>
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#"
+                id="logoutBtn">
+
+                <span>🚪</span>
+
+                Logout
+
+            </a>
+        </li>
+
+        
+
+    </ul>
+
+</div>
+
+<!-- Overlay -->
+
+<div id="overlay"
+    class="overlay"></div>
+
+<!-- Topbar -->
+
+<header class="topbar">
+
+    <div class="topbar-left">
+
+        <button id="menuBtn">
+
+            ☰
+
+        </button>
+
+        <h2>
+
+            Settings
+
+        </h2>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <span id="username">
+
+            Welcome
+
+        </span>
+
+        <button id="themeBtn">
+
+            🌙
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- Main -->
+
+<main class="main-content">
+
+    <section class="settings-container">
+
+        <!-- Appearance -->
+
+        <div class="settings-card">
+
+            <h2>
+
+                🎨 Appearance
+
+            </h2>
+
+            <div class="setting-item">
+
+                <span>
+
+                    Dark Mode
+
+                </span>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="darkMode">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+        <!-- Data -->
+
+        <div class="settings-card">
+
+            <h2>
+
+                📂 Data Management
+
+            </h2>
+
+            <button
+                id="exportBtn">
+
+                📤 Export Tasks
+
+            </button>
+
+            <button
+                id="importBtn">
+
+                📥 Import Tasks
+
+            </button>
+
+            <input
+                type="file"
+                id="importFile"
+                hidden>
+
+            <button
+                id="resetBtn"
+                class="danger">
+
+                🗑 Reset All Tasks
+
+            </button>
+
+        </div>
+
+        <!-- Account -->
+
+        <div class="settings-card">
+
+            <h2>
+
+                🔒 Account
+
+            </h2>
+
+            <button
+                id="logoutSettingBtn">
+
+                🚪 Logout
+
+            </button>
+
+        </div>
+
+        <!-- About -->
+
+        <div class="settings-card">
+
+            <h2>
+
+                ℹ About
+
+            </h2>
+
+            <div class="setting-item">
+
+                <span>
+
+                    Version
+
+                </span>
+
+                <strong>
+
+                    v1.0.0
+
+                </strong>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>
+
+                    Developer
+
+                </span>
+
+                <strong>
+
+                    Student Productivity
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<div id="toast"></div>
+<div id="toast" class="toast"></div>
+
+<script src="js/sidebar.js"></script>
+
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>

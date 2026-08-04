@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | Student Productivity</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="css/sidebar.css">
+
+    <link rel="stylesheet"
+        href="css/profile.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div id="sidebar" class="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>Student</h2>
+
+                    <p>Productivity</p>
+
+                </div>
+
+            </div>
+
+            <button id="closeSidebar">✖</button>
+
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <span>🏠</span>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="calendar.html">
+                    <span>📅</span>
+                    Calendar
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span>🤖</span>
+                    AI Assistant
+                    <small>(Soon)</small>
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html" class="active">
+                    <span>👤</span>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    <span>⚙</span>
+                    Settings
+                </a>
+            </li>
+
+            <li>
+    <a href="notifications.html">
+        <span>🔔</span>
+        Notifications
+    </a>
+</li>
+
+            <li>
+                <a href="about.html">
+                    <span>ℹ</span>
+                    About
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#" id="logoutBtn">
+                    <span>🚪</span>
+                    Logout
+                </a>
+            </li>
+
+            
+
+        </ul>
+
+    </div>
+
+    <!-- Overlay -->
+
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Topbar -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button id="menuBtn">☰</button>
+
+            <h2>Profile</h2>
+
+        </div>
+
+        <div class="topbar-right">
+
+            <span id="username">Welcome</span>
+
+            <button id="themeBtn">🌙</button>
+
+        </div>
+
+    </header>
+
+    <!-- Main -->
+
+    <main class="main-content">
+
+        <section class="profile-container">
+
+            <!-- Profile Card -->
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <h2 id="profileName">
+                    Loading...
+                </h2>
+
+                <p id="profileEmail"></p>
+
+                <button id="editProfileBtn">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Edit Profile
+
+                </button>
+
+            </div>
+
+            <!-- Statistics -->
+
+            <section class="stats">
+
+                <div class="card">
+
+                    <h3>Total Tasks</h3>
+
+                    <p id="totalTasks">0</p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Completed</h3>
+
+                    <p id="completedTasks">0</p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Pending</h3>
+
+                    <p id="pendingTasks">0</p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Progress</h3>
+
+                    <p id="completionRate">0%</p>
+
+                </div>
+
+
+            </section>
+
+            <!-- ==========================
+     Achievements
+========================== -->
+
+<div class="profile-card achievements-card">
+
+    <div class="achievement-header">
+
+        <h2>🏆 Achievements</h2>
+
+        <span id="achievementCount">
+            0 / 8 Unlocked
+        </span>
+
+    </div>
+
+    <div class="streak-card">
+
+    <div class="streak-left">
+
+        <h3>🔥 Login Streak</h3>
+
+        <p id="streakText">0 Days</p>
+
+    </div>
+
+    <div class="streak-right">
+
+        🏅
+
+    </div>
+
+</div>
+
+    <div class="level-card">
+
+    <div class="level-top">
+
+        <h3 id="userLevel">
+            Level 1
+        </h3>
+
+        <span id="xpText">
+            0 / 100 XP
+        </span>
+
+    </div>
+
+    <div class="xp-bar">
+
+        <div class="xp-fill" id="xpFill"></div>
+
+    </div>
+
+</div>
+
+    <div class="achievement-progress">
+
+        <div
+            class="achievement-progress-fill"
+            id="achievementProgress">
+        </div>
+
+    </div>
+
+    <div
+        class="achievement-grid"
+        id="achievementGrid">
+
+    </div>
+
+</div>
+
+            <!-- Account Information -->
+
+            <section class="account-card">
+
+                <h2>
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Account Information
+
+                </h2>
+
+                <div class="info-row">
+
+                    <span>College</span>
+
+                    <span id="profileCollege">-</span>
+
+                </div>
+
+                <div class="info-row">
+
+                    <span>Course</span>
+
+                    <span id="profileCourse">-</span>
+
+                </div>
+
+                <div class="info-row">
+
+                    <span>Semester</span>
+
+                    <span id="profileSemester">-</span>
+
+                </div>
+
+                <div class="info-row">
+
+                    <span>Member Since</span>
+
+                    <span id="memberSince">-</span>
+
+                </div>
+
+            </section>  
+
+        </section>
+
+
+        <!-- Edit Profile Modal -->
+
+<div id="profileModal" class="profile-modal">
+
+    <div class="profile-modal-content">
+
+        <span id="closeProfileModal">&times;</span>
+
+        <h2>Edit Profile</h2>
+
+        <form id="profileForm">
+
+            <input
+                type="text"
+                id="editName"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                id="editEmail"
+                placeholder="Email"
+                required
+                readonly>
+
+            <input
+                type="text"
+                id="editCollege"
+                placeholder="College">
+
+            <input
+                type="text"
+                id="editCourse"
+                placeholder="Course">
+
+            <input
+                type="text"
+                id="editSemester"
+                placeholder="Semester">
+
+            <button type="submit">
+                Save Changes
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+    </main>
+
+    <!-- Achievement Popup -->
+
+<div class="achievement-popup" id="achievementPopup">
+
+    <div class="achievement-popup-icon">
+        🏆
+    </div>
+
+    <div class="achievement-popup-text">
+
+        <h3>Achievement Unlocked!</h3>
+
+        <p id="achievementPopupTitle"></p>
+
+    </div>
+
+</div>
+
+    <script src="js/sidebar.js"></script>
+
+    <script src="js/aiEngine.js"></script>
+
+    <script src="js/profile.js"></script>
+
+    <script src="js/achievements.js"></script>
+
+    <div id="toast"></div>
+
+</body>
+
+</html>

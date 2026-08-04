@@ -1,0 +1,23 @@
+#sortTasks{
+
+    padding:10px 14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    outline:none;
+
+}
+
+body.dark #sortTasks{
+
+    background:#333;
+
+    color:white;
+
+}

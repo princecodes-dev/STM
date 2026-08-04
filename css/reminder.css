@@ -1,0 +1,87 @@
+.reminder{
+
+    display:inline-block;
+
+    margin:10px 0;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.reminder.today{
+
+    background:#FFE082;
+
+    color:#E65100;
+
+}
+
+.reminder.tomorrow{
+
+    background:#BBDEFB;
+
+    color:#0D47A1;
+
+}
+
+.reminder.overdue{
+
+    background:#FFCDD2;
+
+    color:#B71C1C;
+
+}
+
+.reminder.upcoming{
+
+    background:#C8E6C9;
+
+    color:#1B5E20;
+
+}
+
+body.dark .reminder.today{
+
+    background:#5D4037;
+
+    color:#FFD54F;
+
+}
+
+body.dark .reminder.tomorrow{
+
+    background:#1565C0;
+
+    color:white;
+
+}
+
+body.dark .reminder.overdue{
+
+    background:#B71C1C;
+
+    color:white;
+
+}
+
+body.dark .reminder.upcoming{
+
+    background:#2E7D32;
+
+    color:white;
+
+}
+
+.reminder.completed{
+
+    background:#4CAF50;
+
+    color:white;
+
+}

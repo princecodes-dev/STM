@@ -1,0 +1,211 @@
+/* ===============================
+   Settings Page
+================================== */
+
+.settings-container{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+/* ===============================
+   Cards
+================================== */
+
+.settings-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.settings-card h2{
+
+    margin-bottom:20px;
+
+    color:#333;
+
+    font-size:22px;
+
+}
+
+/* ===============================
+   Setting Item
+================================== */
+
+.setting-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.setting-item:last-child{
+
+    border:none;
+
+}
+
+/* ===============================
+   Buttons
+================================== */
+
+.settings-card button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#6366f1;
+
+    color:#fff;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.settings-card button:hover{
+
+    background:#4f46e5;
+
+    transform:translateY(-2px);
+
+}
+
+.settings-card .danger{
+
+    background:#ef4444;
+
+}
+
+.settings-card .danger:hover{
+
+    background:#dc2626;
+
+}
+
+/* ===============================
+   Toggle Switch
+================================== */
+
+.switch{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:60px;
+
+    height:32px;
+
+}
+
+.switch input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    cursor:pointer;
+
+    inset:0;
+
+    background:#ccc;
+
+    transition:.3s;
+
+    border-radius:50px;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+
+    height:24px;
+
+    left:4px;
+
+    bottom:4px;
+
+    background:#fff;
+
+    transition:.3s;
+
+    border-radius:50%;
+
+}
+
+input:checked + .slider{
+
+    background:#6366f1;
+
+}
+
+input:checked + .slider::before{
+
+    transform:translateX(28px);
+
+}
+
+/* ===============================
+   Responsive
+================================== */
+
+@media(max-width:768px){
+
+    .settings-card{
+
+        padding:20px;
+
+    }
+
+    .setting-item{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+}

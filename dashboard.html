@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Student Task Manager</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/pinTask.css">
+
+    <link rel="stylesheet" href="css/taskDetails.css">
+
+    <link rel="stylesheet" href="css/sorting.css">
+
+    <link rel="stylesheet" href="css/progress.css">
+
+    <link rel="stylesheet" href="css/reminder.css">
+
+    <link rel="stylesheet" href="css/category.css">
+
+    <link rel="stylesheet" href="css/sidebar.css">
+
+    <link rel="stylesheet" href="css/ai.css">
+    
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+<div id="sidebar" class="sidebar">
+
+    <div class="sidebar-header">
+
+        <div class="brand">
+
+    <div class="brand-icon">
+        🎓
+    </div>
+
+    <div>
+
+        <h2>Student</h2>
+
+        <p>Productivity</p>
+
+    </div>
+
+</div>
+
+        <button id="closeSidebar">✖</button>
+
+    </div>
+
+    <ul class="sidebar-menu">
+
+        <li>
+    <a href="dashboard.html"class="active">
+        <span>🏠</span>
+        Dashboard
+    </a>
+</li>
+
+<li>
+    <a href="calendar.html">
+        <span>📅</span>
+        Calendar
+    </a>
+</li>
+
+<li>
+    <a href="#">
+        <span>🤖</span>
+        AI Assistant
+        <small>(Soon)</small>
+    </a>
+</li>
+
+<li>
+    <a href="profile.html">
+        <span>👤</span>
+        Profile
+    </a>
+</li>
+
+<li>
+    <a href="settings.html">
+        <span>⚙</span>
+        Settings
+    </a>
+</li>
+
+<li>
+    <a href="notifications.html">
+        <span>🔔</span>
+        Notifications
+    </a>
+</li>
+
+
+<li>
+    <a href="about.html">
+        <span>ℹ</span>
+        About
+    </a>
+</li>
+
+<li>
+    <a href="#" id="logoutBtn">
+        <span>🚪</span>
+        Logout
+    </a>
+</li>
+    </ul>
+
+</div>  
+
+<!-- Overlay -->
+
+
+<div id="overlay" class="overlay"></div>
+
+
+
+<header class="topbar">
+
+    <div class="topbar-left">
+
+        <button id="menuBtn">☰</button>
+
+        <h2>Dashboard</h2>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <span id="username">Welcome</span>
+
+        <button id="themeBtn">🌙</button>
+
+    </div>
+
+</header>  
+
+    <!-- Navbar -->
+
+    
+    <main class="main-content">
+
+    <!-- Welcome Section -->
+
+    <section class="welcome">
+
+        <h1>
+            Welcome Back 👋
+        </h1>
+
+        <p>
+            Stay productive and complete your daily tasks.
+        </p>
+
+    </section>
+
+    <!-- Statistics -->
+
+    <section class="stats">
+
+        <div class="card">
+            <h3>Total Tasks</h3>
+            <p id="totalTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Completed</h3>
+            <p id="completedTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p id="pendingTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Progress</h3>
+            <p id="progress">0%</p>
+        </div>
+
+    </section>
+
+    <section class="chart-section">
+
+    <div class="chart-card">
+
+        <h2>Task Analytics</h2>
+
+        <canvas id="taskChart"></canvas>
+
+    </div>
+
+    </section>
+
+    
+        <section class="progress-section">
+
+    <div class="progress-card">
+
+        <h2>Overall Progress</h2>
+
+        <div class="progress-bar">
+
+            <div
+                id="progressFill"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+        <p id="progressText">
+            0 of 0 Tasks Completed
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- Controls -->
+
+    <section class="controls">
+
+        <input type="text"
+            id="searchTask"
+            placeholder="Search Task...">
+
+        <button id="addTaskBtn">
+
+            + Add Task
+
+        </button>
+
+        <button id="exportCSVBtn">
+            📥 Export CSV
+        </button>
+
+        <select id="sortTasks">
+
+            <option value="default">Sort By</option>
+
+            <option value="date">📅 Due Date</option>
+
+            <option value="priority">⭐ Priority</option>
+
+            <option value="az">🔤 A - Z</option>
+
+        </select>
+
+    </section>
+    <div class="filters">
+
+    <button class="filter-btn active" data-filter="all">
+        All
+    </button>
+
+    <button class="filter-btn" data-filter="pending">
+        Pending
+    </button>
+
+    <button class="filter-btn" data-filter="completed">
+        Completed
+    </button>
+
+    </div>
+
+    <div class="category-filters">
+
+    <button class="category-btn active"
+        data-category="All">
+        All Categories
+    </button>
+
+    <button class="category-btn"
+        data-category="Study">
+        📚 Study
+    </button>
+
+    <button class="category-btn"
+        data-category="Work">
+        💼 Work
+    </button>
+
+    <button class="category-btn"
+        data-category="Personal">
+        🏠 Personal
+    </button>
+
+    <button class="category-btn"
+        data-category="Fitness">
+        💪 Fitness
+    </button>
+
+</div>
+
+    <!-- Task List -->
+
+    <section>
+
+        <div id="taskContainer">
+
+        </div>
+
+    </section>
+    <!-- Add Task Modal -->
+
+<div class="modal" id="taskModal">
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">Add New Task</h2>
+
+        <form id="taskForm">
+
+            <input
+                type="text"
+                id="taskTitle"
+                placeholder="Task Title"
+                required
+            >
+
+            <input
+                type="text"
+                id="taskSubject"
+                placeholder="Subject"
+                required
+            >
+
+            <select id="taskPriority">
+
+                <option value="Low">Low Priority</option>
+
+                <option value="Medium">Medium Priority</option>
+
+                <option value="High">High Priority</option>
+
+            </select>
+
+            <input
+                type="date"
+                id="taskDate"
+                required
+            >
+
+            <div class="form-group">
+
+                <label>Description</label>
+
+                <textarea
+                    id="taskDescription"
+                    rows="4"
+                    placeholder="Enter task description..."></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Reference Link</label>
+
+                <input
+                    type="url"
+                    id="taskLink"
+                    placeholder="https://">
+
+            </div>
+
+            <div class="form-group">
+
+    <label>Category</label>
+
+    <select id="taskCategory">
+
+        <option value="Study">📚 Study</option>
+
+        <option value="Work">💼 Work</option>
+
+        <option value="Personal">🏠 Personal</option>
+
+        <option value="Fitness">💪 Fitness</option>
+
+    </select>
+
+</div>
+
+<div class="form-group">
+
+    <label>Tags</label>
+
+    <input
+        type="text"
+        id="taskTags"
+        placeholder="Java, RTU, Assignment">
+
+</div>
+
+            <div class="modal-buttons">
+
+                <button type="submit" id="saveTaskBtn">
+                    Save Task
+                </button>
+
+                <button
+                    type="button"
+                    id="closeModal"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+    </main>
+
+    <div id="detailsModal" class="details-modal">
+
+    <div class="details-content">
+
+        <h2>Task Details</h2>
+
+        <h3 id="detailTitle"></h3>
+
+        <p id="detailDescription"></p>
+
+        <a
+            id="detailLink"
+            target="_blank">
+        </a>
+
+        <button id="closeDetails">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     AI Floating Button
+========================== -->
+
+<div class="ai-fab" id="aiFab">
+    <img src="assets/ai-icon.png" alt="AI Assistant">
+    <span class="ai-badge"></span>
+</div>
+
+<!-- ==========================
+     AI Assistant Popup
+========================== -->
+
+<div class="ai-popup" id="aiPopup">
+
+    <!-- Header -->
+
+    <div class="ai-header">
+
+        <div class="ai-title">
+
+            <img src="assets/ai-icon.png" alt="AI">
+
+            <div>
+
+                <h3>Student AI</h3>
+
+                <small>Offline Assistant</small>
+
+            </div>
+
+        </div>
+
+        <div class="ai-header-actions">
+
+    <button id="resetAI" title="Reset Chat">
+        🗑️
+    </button>
+
+</div>
+
+        <button id="closeAI">&times;</button>
+
+    </div>
+
+    <!-- Quick Actions -->
+
+    <div class="ai-quick-actions">
+
+        <button class="ai-action" data-action="analyze">
+            📊 Analyze Me
+        </button>
+
+        <button class="ai-action" data-action="plan">
+            📅 Today's Plan
+        </button>
+
+        <button class="ai-action" data-action="weekly">
+            📈 Weekly Report
+        </button>
+
+        <button class="ai-action" data-action="focus">
+            🎯 Focus Subject
+        </button>
+
+        <button class="ai-action" data-action="overdue">
+            🔥 Overdue Tasks
+        </button>
+
+        <button class="ai-action" data-action="summary">
+            📝 Summarize Tasks
+        </button>
+
+    </div>
+
+    <!-- Chat Messages -->
+
+    <div class="ai-chat" id="aiChat">
+
+        <div class="ai-refresh" id="aiRefresh">
+    ⬇ Pull down to clear chat
+</div>
+
+    </div>
+
+    <!-- Input Area -->
+
+    <div class="ai-input-area">
+
+        <input
+            type="text"
+            id="aiInput"
+            placeholder="Ask anything..."
+        >
+
+        <button id="sendAI">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+    <div id="toast"></div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/reminder.js"></script>
+    <script src="js/dashboard.js"></script>
+
+    <!--Features-->
+    <script src="js/pinTask.js"></script>
+    <script src="js/taskDetails.js"></script>
+    <script src="js/sorting.js"></script>
+    
+    <script src="js/progress.js"></script>
+    <script src="js/category.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/aiHistory.js"></script>
+    <script src="js/aiEngine.js"></script>
+    <script src="js/aiIntent.js"></script>
+    <script src="js/ai.js"></script>
+
+    <div id="toast" class="toast"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.task-buttons button:first-child{
+
+    background:#FFD54F;
+
+    color:#000;
+
+    font-weight:bold;
+
+}
+
+.task-buttons button:first-child:hover{
+
+    transform:scale(1.05);
+
+}

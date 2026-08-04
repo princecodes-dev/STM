@@ -1,0 +1,709 @@
+/* ===============================
+   Profile Page
+================================== */
+
+.profile-container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+/* ===============================
+   Profile Card
+================================== */
+
+.profile-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.profile-avatar{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#6366f1,#8b5cf6);
+
+    color:#fff;
+
+    font-size:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 20px;
+
+}
+
+.profile-card h2{
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.profile-card p{
+
+    color:#666;
+
+    margin-bottom:20px;
+
+}
+
+/* ===============================
+   Button
+================================== */
+
+#editProfileBtn{
+
+    background:#6366f1;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+#editProfileBtn:hover{
+
+    background:#4f46e5;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===============================
+   Statistics
+================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.card h3{
+
+    color:#666;
+
+    font-size:16px;
+
+    margin-bottom:12px;
+
+}
+
+.card p{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#6366f1;
+
+}
+
+/* ===============================
+   Account Card
+================================== */
+
+.account-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.account-card h2{
+
+    margin-bottom:25px;
+
+}
+
+.info-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.info-row:last-child{
+
+    border:none;
+
+}
+
+.info-row span:first-child{
+
+    font-weight:600;
+
+    color:#555;
+
+}
+
+.info-row span:last-child{
+
+    color:#777;
+
+}
+
+/* ===============================
+   Responsive
+================================== */
+
+@media(max-width:768px){
+
+    .profile-card{
+
+        padding:25px;
+
+    }
+
+    .profile-avatar{
+
+        width:90px;
+
+        height:90px;
+
+        font-size:40px;
+
+    }
+
+    .card p{
+
+        font-size:24px;
+
+    }
+
+    .info-row{
+
+        flex-direction:column;
+
+        gap:8px;
+
+    }
+
+}
+
+/* ===========================
+   Edit Profile Modal
+=========================== */
+
+.profile-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.profile-modal-content{
+
+    width:450px;
+
+    max-width:90%;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    position:relative;
+
+}
+
+.profile-modal-content h2{
+
+    margin-bottom:20px;
+
+}
+
+.profile-modal-content input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+}
+
+.profile-modal-content button{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    background:#6366f1;
+
+    color:#fff;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+.profile-modal-content button:hover{
+
+    background:#4f46e5;
+
+}
+
+#closeProfileModal{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+/* ==========================
+   Achievements
+========================== */
+
+.achievements-card{
+
+    margin-top:25px;
+
+}
+
+.achievement-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.achievement-header h2{
+
+    font-size:22px;
+
+    color:#222;
+
+}
+
+#achievementCount{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#666;
+
+}
+
+.achievement-progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:#ececec;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:22px;
+
+}
+
+.achievement-progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #f7b500,
+        #ffcc33
+    );
+
+    transition:.5s;
+
+}
+
+.achievement-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+
+    gap:15px;
+
+}
+
+.achievement{
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:#f8f9fc;
+
+    text-align:center;
+
+    transition:.3s;
+
+    border:2px solid transparent;
+
+}
+
+.achievement:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.achievement i{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.achievement h4{
+
+    font-size:15px;
+
+    margin-bottom:6px;
+
+}
+
+.achievement p{
+
+    font-size:12px;
+
+    color:#666;
+
+}
+
+/* Unlocked */
+
+.achievement.unlocked{
+
+    border-color:#FFD700;
+
+    background:#fff9dc;
+
+}
+
+.achievement.unlocked i{
+
+    color:#f7b500;
+
+}
+
+/* Locked */
+
+.achievement.locked{
+
+    opacity:.55;
+
+}
+
+.achievement.locked i{
+
+    color:#999;
+
+}
+
+@media(max-width:768px){
+
+    .achievement-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+/* ==========================
+Achievement Popup
+========================== */
+
+.achievement-popup{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    width:320px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    border-radius:18px;
+
+    background:#ffffff;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    transform:translateX(420px);
+
+    transition:.5s;
+
+    z-index:99999;
+
+}
+
+.achievement-popup.show{
+
+    transform:translateX(0);
+
+}
+
+.achievement-popup-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:32px;
+
+    border-radius:50%;
+
+    background:#FFD54F;
+
+}
+
+.achievement-popup-text h3{
+
+    margin-bottom:5px;
+
+}
+
+.achievement-popup-text p{
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+
+
+/* ==========================
+   XP System
+========================== */
+
+.level-card{
+
+    margin-bottom:25px;
+
+}
+
+.level-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+}
+
+#userLevel{
+
+    color:#3d6df2;
+
+}
+
+.xp-bar{
+
+    width:100%;
+
+    height:12px;
+
+    background:#ececec;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.xp-fill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(90deg,#4CAF50,#00C853);
+
+    transition:.6s;
+
+}
+
+
+/* ==========================
+   Login Streak
+========================== */
+
+.streak-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px;
+
+    margin-bottom:20px;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#ff9800,#ff5722);
+
+    color:#fff;
+
+}
+
+.streak-left h3{
+
+    margin-bottom:5px;
+
+}
+
+#streakText{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.streak-right{
+
+    font-size:42px;
+
+}
